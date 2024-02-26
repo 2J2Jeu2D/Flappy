@@ -30,7 +30,5 @@ public class DeplacementObjets : MonoBehaviour
         }
        
         transform.Translate(vitesse, 0, 0);
-        
-        
     }
 }
