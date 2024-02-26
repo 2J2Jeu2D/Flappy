@@ -301,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554696344}
   - component: {fileID: 554696345}
+  - component: {fileID: 554696346}
   m_Layer: 0
   m_Name: Ciel (1)
   m_TagString: Untagged
@@ -375,6 +376,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &554696346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554696343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -0.009
+  positionFin: -21
+  positionDebut: 19.5
+  deplacementAleatoire: 0
 --- !u!1 &649656787
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649656788}
   - component: {fileID: 649656789}
+  - component: {fileID: 649656790}
   m_Layer: 0
   m_Name: Nuage
   m_TagString: Untagged
@@ -459,6 +477,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &649656790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649656787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -0.01
+  positionFin: -20
+  positionDebut: 20
+  deplacementAleatoire: 0
 --- !u!1 &1063087995
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +502,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063087996}
-  - component: {fileID: 1063087997}
   m_Layer: 0
   m_Name: Ciels
   m_TagString: Untagged
@@ -493,22 +526,6 @@ Transform:
   m_Father: {fileID: 1479065833}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1063087997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063087995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vitesse: -0.1
-  positionFin: 0
-  positionDebut: 0
-  deplacementAleatoire: 0
 --- !u!1 &1207494310
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1613459990}
   - component: {fileID: 1613459991}
+  - component: {fileID: 1613459992}
   m_Layer: 0
   m_Name: Ciel
   m_TagString: Untagged
@@ -878,6 +896,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1613459992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613459989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -0.009
+  positionFin: -21
+  positionDebut: 19.5
+  deplacementAleatoire: 0
 --- !u!1 &1643148913
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835622059}
+  - component: {fileID: 1835622060}
   m_Layer: 0
   m_Name: DeuxColonnes (1)
   m_TagString: Untagged
@@ -995,6 +1030,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835622060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835622058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -0.02
+  positionFin: -12
+  positionDebut: 16
+  deplacementAleatoire: 3
 --- !u!1 &1851798812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1855056672}
+  - component: {fileID: 1855056673}
   m_Layer: 0
   m_Name: DeuxColonnes (2)
   m_TagString: Untagged
@@ -1112,6 +1164,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1855056673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855056671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -0.02
+  positionFin: -12
+  positionDebut: 20
+  deplacementAleatoire: 3
 --- !u!1 &1856844704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7cbd6b12ffef740ab013c30e02f824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: -0.1
-  positionFin: 0
-  positionDebut: 0
-  deplacementAleatoire: 0
+  vitesse: -0.02
+  positionFin: -12
+  positionDebut: 12
+  deplacementAleatoire: 3

@@ -20,10 +20,17 @@ public class DeplacementObjets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(vitesse, 0, 0);
+        float valeurAleatoireY = Random.Range(-deplacementAleatoire,deplacementAleatoire);
 
-        float valeurAleatoireY = Random.Range(-deplacementAleatoire, deplacementAleatoire)
-        transform.position = new Vector2(positionDebut, valeurAleatoireY);
+
+        if (transform.position.x < positionFin)
+        {
+            
+            transform.position = new Vector2(positionDebut, valeurAleatoireY);
+        }
+       
+        transform.Translate(vitesse, 0, 0);
+        
         
     }
 }
