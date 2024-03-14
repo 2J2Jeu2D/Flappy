@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class ControleFlappy : MonoBehaviour
@@ -28,6 +29,11 @@ public class ControleFlappy : MonoBehaviour
     public AudioClip sonChampignon;
     public AudioClip sonFinPartie;
 
+    //Déclaration des variables pour le texte
+    public TextMeshProUGUI textFinDuJeu; 
+    public TextMeshProUGUI textPointage; // texte du pointage
+    float compteur;
+
     AudioSource sourceAudio; //Audio
 
     public bool partieTerminee; // variable pour la fin de la partie
@@ -38,7 +44,9 @@ public class ControleFlappy : MonoBehaviour
     void Start()
     {
         sourceAudio = GetComponent<AudioSource>(); //va chercher le son
-        partieTerminee = false; 
+        partieTerminee = false;
+        textFinDuJeu.text = "Recommencer la partie?";
+        textFinDuJeu.GetComponent<TextMeshProUGUI>().fontSize = 0; //va chercher le texte
     }
 
     // Update is called once per frame
@@ -68,7 +76,8 @@ public class ControleFlappy : MonoBehaviour
         else
         {
             vitesseY = GetComponent<Rigidbody2D>().velocity.y; //vitesse verticale actuelle
-        } }
+        } 
+
         if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
         {
             if (flappyEtatBlesse == false)
@@ -105,11 +114,13 @@ public class ControleFlappy : MonoBehaviour
             vitesseY = GetComponent<Rigidbody2D>().velocity.y;
 
         }
-
-
-
         GetComponent<Rigidbody2D>().velocity = new Vector2(vitesseX, vitesseY);
-    }
+        }
+        else { 
+        
+        }
+
+    } 
 
     void OnCollisionEnter2D(Collision2D infocollision)
     {
@@ -129,7 +140,8 @@ public class ControleFlappy : MonoBehaviour
 
                 //Fin de partie est activée
                 partieTerminee = true;
-                
+                textFinDuJeu.GetComponent<TextMeshProUGUI>().fontSize = 100f; //va chercher le texte
+
                 //Flappy peut maintenant tourner
                 GetComponent<Rigidbody2D>().freezeRotation = false;
                 //Vitesse angulaire
@@ -142,8 +154,11 @@ public class ControleFlappy : MonoBehaviour
 
                 //Relancer le jeu
                 Invoke("FinPartie", 3f);
-
-
+            }
+            if (infocollision.gameObject.name == "Colonne")
+            {
+                compteur = compteur - 5f;
+                UpdatePointage();
             }
         }
 
@@ -154,7 +169,10 @@ public class ControleFlappy : MonoBehaviour
         {
             infocollision.gameObject.SetActive(false); //Pièce disparait
             Invoke("PieceRevient", 3f); //Pièce revient après 3 secondes
-            sourceAudio.PlayOneShot(sonOr, 1f); //Joue le clip qui se trouve dans la variable sonOr
+            sourceAudio.PlayOneShot(sonOr, 1f); //Joue le clip qui se trouve dans la variable sonor
+            //Pointage
+            compteur = compteur + 5f;
+            UpdatePointage();
         }
 
 
@@ -167,6 +185,9 @@ public class ControleFlappy : MonoBehaviour
             Invoke("PackVieRevient", 3f); //Pack revient après 3 secondes
             GetComponent<SpriteRenderer>().sprite = flappyNormal; //Fappy redevient normal
             sourceAudio.PlayOneShot(sonPack, 1f); //Joue le clip qui se trouve dans la variable sonPack
+            //Pointage
+            compteur = compteur + 5f;
+            UpdatePointage();
         }
 
 
@@ -178,6 +199,16 @@ public class ControleFlappy : MonoBehaviour
             transform.localScale *= 1.5f; //Flappy grossit 
             Invoke("ChampignonRevient", 3f); //Champignon revient après 3 secondes
             sourceAudio.PlayOneShot(sonChampignon, 1f); //Joue le clip qui se trouve dans la variable sonChampignon
+            //Pointage
+            compteur = compteur + 10f;
+            UpdatePointage();
+        }
+
+        //Collision avec le décor
+        else if (infocollision.gameObject.name == "Decor")
+        {
+            compteur = compteur - 5f;
+            UpdatePointage();
         }
     }
 
@@ -204,5 +235,10 @@ public class ControleFlappy : MonoBehaviour
     void FinPartie()
     {
         SceneManager.LoadScene("Flappy");
+    }
+
+    void UpdatePointage()
+    {
+        textPointage.text = "Pointage: " + compteur.ToString();
     }
 }
