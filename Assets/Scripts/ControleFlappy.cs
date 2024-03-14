@@ -13,6 +13,7 @@ public class ControleFlappy : MonoBehaviour
     public float positionFin;
     public float positionDebut;
     public float deplacementAleatoire;
+    public float deplacementAleatoireY; // déplacement aléatoire en Y
 
     public Sprite flappyBlesse;
     public Sprite flappyNormal;
@@ -21,6 +22,7 @@ public class ControleFlappy : MonoBehaviour
     public GameObject objetPiece;
     public GameObject objetPack;
     public GameObject objetChampignon;
+    public GameObject elementGrille; // objet grille
 
     // Déclaration de la variable public de l’objet son
     public AudioClip sonColonne;
@@ -173,7 +175,11 @@ public class ControleFlappy : MonoBehaviour
             //Pointage
             compteur = compteur + 5f;
             UpdatePointage();
+            //Animation
+            elementGrille.GetComponent<Animator>().enabled = true;    //permet d'activer l'Animator
         }
+
+       
 
 
 
@@ -240,5 +246,21 @@ public class ControleFlappy : MonoBehaviour
     void UpdatePointage()
     {
         textPointage.text = "Pointage: " + compteur.ToString();
+    }
+
+    // Fonction pour l'activation d'une pièce d'or à une position aléatoire
+    void pieceOrAleatoire()
+    {
+        // On active l'objet pièce d'or
+        objetPiece.SetActive(true);
+
+        // On génère une valeur aléatoire pour le déplacement vertical
+        float valeurAleatoireY = Random.Range(-deplacementAleatoireY, deplacementAleatoireY);
+        objetPiece.transform.position = new Vector2(objetPiece.transform.position.x, valeurAleatoireY);
+
+
+        elementGrille.GetComponent<Animator>().enabled = false;
+
+
     }
 }
