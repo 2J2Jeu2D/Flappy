@@ -3,7 +3,16 @@ guid: be266384fe6b462458af7d2380d47ac5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - flappyBlesse: {instanceID: 0}
+  - flappyNormal: {instanceID: 0}
+  - objetPiece: {instanceID: 0}
+  - objetPack: {instanceID: 0}
+  - objetChampignon: {instanceID: 0}
+  - sonCol: {fileID: 8300000, guid: d3ec95b8d89d5204ba048b35a58b10f5, type: 3}
+  - sonOr: {fileID: 8300000, guid: 2d8ced930507d874a9f6b432177fa96a, type: 3}
+  - sonPack: {fileID: 8300000, guid: 4031a0eb7983b3b48a2d959ff98e8542, type: 3}
+  - sonFinPartie: {fileID: 8300000, guid: 9f2b734142bb2e54d81865b8c96fb3b4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
